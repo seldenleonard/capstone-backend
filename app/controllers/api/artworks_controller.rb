@@ -8,6 +8,7 @@ class Api::ArtworksController < ApplicationController
   def create
     @artwork = Artwork.new({
       user_id: params[:user_id], # Will need to change user_id to be current user instead of param
+      # user_id: current_user.id   --- this will be defined when I set up my authentication
       title: params[:title],
       medium: params[:medium],
       description: params[:description],

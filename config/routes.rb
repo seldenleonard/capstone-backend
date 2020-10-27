@@ -18,6 +18,18 @@ Rails.application.routes.draw do
     patch "/artworks/:id" => "artworks#update"
     delete "/artworks/:id" => "artworks#destroy"
 
+    # College Routes
+    get "/colleges" => "colleges#index"
+    get "/colleges/:id" => "colleges#show"
+
+    # Image Routes
+    post "/images" => "images#create"
+    delete "/images/:id" => "images#destroy"
+
+    # Upvote Routes
+    post "/upvotes" => "upvotes#create"
+    delete "/upvotes/:id" => "upvotes#destroy"
+
   end
 
 end

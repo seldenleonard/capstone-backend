@@ -1,0 +1,9 @@
+{
+  id: college.id,
+  name: college.name,
+  abbreviation: college.abbreviation,
+  city: college.city,
+  state: college.state,
+  bio: college.bio,
+  image_url: college.image_url
+}

@@ -1,1 +1,13 @@
-render partial: "artwork.json.jb", locals: { artwork: @artwork }
+artwork = render partial: "artwork.json.jb", locals: { artwork: @artwork }
+
+# render artist show (how do i do this without showing all of that user's artworks? because my user show has built in that it displays all of the artworks of that user. so now my artwork show is actually a single user artwork index)
+artwork[:user] = render partial: "api/users/user.json.jb", locals: {user: @artwork.user}
+artwork[:user]
+
+# Also need to make this an image index for each specific artwork -- but if my artworks conrtoller does not require that I make views or partials, do I still need to make them for this purpose?
+
+artwork[:images] = artwork.images.map do |image|
+  render partial: "api/images/image.json.jb", locals: { image: image }
+end
+
+artwork
