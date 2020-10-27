@@ -9,5 +9,18 @@
   college_id: user.college_id,
   major: user.major,
   minor: user.minor,
-  graduation_year: user.graduation_year
+  graduation_year: user.graduation_year,
+  artworks: user.artworks.map do |artwork|
+    {
+    id: artwork.id,
+    title: artwork.title,
+    medium: artwork.medium,
+    description: artwork.description,
+    price: artwork.price,
+    dimensions: artwork.dimensions,
+    year: artwork.year,
+    created_at: artwork.created_at,
+    updated_at: artwork.updated_at
+    }
+  end
 }

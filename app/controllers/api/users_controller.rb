@@ -22,8 +22,8 @@ class Api::UsersController < ApplicationController
       graduation_year: params[:graduation_year]
     })
     if @user.save
-      render json: { message: "User successfully created" }, status: 200
-      # render "show.json.jb"
+      # render json: { message: "User successfully created" }, status: 200
+      render "show.json.jb"
     else
       render json: { errors: @user.errors.full_messages }, status: 422
     end
