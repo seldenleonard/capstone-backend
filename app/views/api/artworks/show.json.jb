@@ -6,8 +6,8 @@ artwork[:user]
 
 # Also need to make this an image index for each specific artwork -- but if my artworks conrtoller does not require that I make views or partials, do I still need to make them for this purpose?
 
-artwork[:images] = artwork.images.map do |image|
-  render partial: "api/images/image.json.jb", locals: { image: image }
-end
+# artwork[:images] = artwork.images.map do |image|
+#   render partial: "api/images/image.json.jb", locals: { image: image }
+# end
 
 artwork
