@@ -1,0 +1,13 @@
+{
+  id: user.id,
+  name: user.name,
+  email: user.email,
+  artist: user.artist,
+  bio: user.bio,
+  art_style: user.art_style,
+  image_url: user.image_url,
+  college_id: user.college_id,
+  major: user.major,
+  minor: user.minor,
+  graduation_year: user.graduation_year
+}
