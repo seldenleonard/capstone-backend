@@ -3,14 +3,12 @@ class Api::UsersController < ApplicationController
 
   # ISSUE 1: It works but creates 2 "User" instances when sent through to server.
   # ISSUE 2: I dont want user to input their college_id, but rather have them enter a college and I store the college_id.
-  # ISSUE 3: The password_digest is coming through as the raw password, so I need to add authentication.
   def create
     @user = User.new({
       name: params[:name],
       email: params[:email],
-      # password_digest: params[:password_digest],
-      # password: params[:password],
-      # password_confirmation: params[:password],
+      password: params[:password],
+      password_confirmation: params[:password_confirmation],
       artist: params[:artist],
       bio: params[:bio],
       art_style: params[:art_style],
@@ -23,7 +21,7 @@ class Api::UsersController < ApplicationController
     if @user.save
       render "show.json.jb"
     else
-      render json: { errors: @user.errors.full_messages }, status: 422
+      render json: { errors: @user.errors.full_messages }, status: :bad_request
     end
   end
   
