@@ -12,7 +12,11 @@ Rails.application.routes.draw do
     delete "/users/:id" => "users#destroy"
   
     # Artwork Routes
-
+    get "/artworks" => "artworks#index"
+    post "/artworks" => "artworks#create"
+    get "/artworks/:id" => "artworks#show"
+    patch "/artworks/:id" => "artworks#update"
+    delete "/artworks/:id" => "artworks#destroy"
 
   end
 

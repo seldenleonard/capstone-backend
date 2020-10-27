@@ -1,0 +1,3 @@
+@artworks.map do |artwork|
+  render partial: "artwork.json.jb", locals: { artwork: artwork }
+end

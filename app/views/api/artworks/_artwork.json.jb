@@ -1,0 +1,13 @@
+{
+  id: artwork.id,
+  user_id: artwork.user_id,
+  artist: artwork.user.name,
+  title: artwork.title,
+  medium: artwork.medium,
+  description: artwork.description,
+  price: artwork.price,
+  dimensions: artwork.dimensions,
+  year: artwork.year,
+  created_at: artwork.created_at,
+  updated_at: artwork.updated_at
+}
