@@ -1,5 +1,7 @@
 class Api::UpvotesController < ApplicationController
 
+  before_action: :authenticate_user
+
   def create
     @upvote = Upvote.new({
       artwork_id: params[:artwork_id],

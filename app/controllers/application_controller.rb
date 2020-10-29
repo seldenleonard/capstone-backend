@@ -27,5 +27,10 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def authenticate_artist
+    unless current_user && current_user.artist
+      render json: {}, status: :unauthorized
+    end
+  end
 
 end

@@ -1,5 +1,7 @@
 class Api::ArtworksController < ApplicationController
 
+  before_action :authenticate_artist, except: [:index, :show]
+
   def index
     @artworks = Artwork.all
     render "index.json.jb"

@@ -1,5 +1,6 @@
 class Api::UsersController < ApplicationController
 
+  before_action: :authenticate_user, except: [:create]
 
   # ISSUE 1: It works but creates 2 "User" instances when sent through to server.
   # ISSUE 2: I dont want user to input their college_id, but rather have them enter a college and I store the college_id.
