@@ -1,8 +1,9 @@
+# Shows the User information
 user = render partial: "user.json.jb", locals: { user: @user }
 
-# render all artworks by this artist
-# user[:artworks] = render partial: "api/artworks/artwork.json.jb", locals: {artworks: @user.artworks}
+# Shows all Artworks by the User
+user[:artworks] = @user.artworks.map do | artwork |
+  render partial: "api/artworks/artwork.json.jb", locals: {artwork: artwork}
+end
 
-# artworks: user.artworks.map do |artwork|
-#   user[:artworks] = render partial: "api/artworks/artwork.json.jb", locals: {artworks: @user.artworks}
-# end
+user

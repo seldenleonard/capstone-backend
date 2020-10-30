@@ -1,0 +1,4 @@
+{
+  artwork_id: image.artwork_id,
+  url: image.url
+}
