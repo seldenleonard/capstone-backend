@@ -9,7 +9,6 @@ class Api::ArtworksController < ApplicationController
 
   def create
     @artwork = Artwork.new({
-      # user_id: params[:user_id], # Will need to change user_id to be current user instead of param
       user_id: current_user.id,
       title: params[:title],
       medium: params[:medium],
@@ -47,8 +46,10 @@ class Api::ArtworksController < ApplicationController
 
   def destroy
     @artwork = Artwork.find(params[:id])
-    @artwork.destroy
-    render json: {message: "The artwork has successfully been destroyed"}
+    if current_user.id == @artwork.user_id
+      @artwork.destroy
+      render json: {message: "The artwork has successfully been destroyed"}
+    end
   end
 
 end

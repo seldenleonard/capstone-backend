@@ -7,7 +7,6 @@
   art_style: user.art_style,
   image_url: user.image_url,
   college_id: user.college_id,
-  college: user.college.name,
   major: user.major,
   minor: user.minor,
   graduation_year: user.graduation_year,

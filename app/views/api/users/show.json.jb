@@ -6,4 +6,8 @@ user[:artworks] = @user.artworks.map do | artwork |
   render partial: "api/artworks/artwork.json.jb", locals: {artwork: artwork}
 end
 
+if @user.artist
+  user[:college_name] = @user.college.name
+end
+
 user

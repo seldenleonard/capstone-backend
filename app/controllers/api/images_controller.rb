@@ -1,6 +1,6 @@
 class Api::ImagesController < ApplicationController
 
-  before_action: :authenticate_artist
+  before_action :authenticate_artist
 
   def create
     image = Image.new({

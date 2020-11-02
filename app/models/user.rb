@@ -2,21 +2,25 @@ class User < ApplicationRecord
 
   has_secure_password
   validates :email, presence: true, uniqueness: true
-  # validates :name, presence: true
-  # validates :name, length: { in: 2..30 }
-  # validates :artist, presence: true, 
-  # validates :artist, inclusion: { in: [true, false] }
+  validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }, if: :is_artist?
+  # -- trying to have email include .edu or maybe a list of @usc.edu, @nyu.edu, @utau.edu, and @umich.edu?
+  validates :name, presence: true
+  validates :name, length: { in: 2..30 }
+  # validates :artist, presence: true # -- Probably dont need because a checkbox will make it unneccesary on frontend
+  validates :artist, inclusion: { in: [true, false] } # this is not stopping random words from being entered into the artist params in User create
   # validates :artist, exclusion: { in: [nil] }
-  # validates :bio, length: { maximum: 600 }
-  # validates :art_style, length: { maximum: 50 }
-  # validates :major, length: { maximum: 30 }
-  # validates :minor, length: { maximum: 30 }
-  # validates :graduation_year, length: { is: 4 }
-  # validates :college_id, presence: true, unless: :is_not_artist
-
-  # def is_not_artist
-  #   artist == "false"
-  # end
+  # validates :artist, default: false
+  validates :bio, length: { maximum: 600 }
+  validates :art_style, length: { maximum: 50 }
+  validates :major, length: { maximum: 30 }
+  validates :minor, length: { maximum: 30 }
+  # validates :graduation_year, presence: true ------ need to make this for artists only -- can do this on frontend
+  validates :graduation_year, length: { is: 4 }
+  validates :college_id, presence: true, if: :is_artist?
+  
+  def is_artist?
+    artist
+  end
 
   has_many :artworks
   has_many :upvotes

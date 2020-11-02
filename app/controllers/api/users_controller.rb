@@ -1,9 +1,8 @@
 class Api::UsersController < ApplicationController
 
-  # before_action: :authenticate_user, except: [:create]
+  before_action :authenticate_user, except: [:create, :show]
 
-  # ISSUE 1: It works but creates 2 "User" instances when sent through to server.
-  # ISSUE 2: I dont want user to input their college_id, but rather have them enter a college and I store the college_id.
+  # ISSUE 2: I dont want a new user to input their college_id, but rather have them enter a college and I store the college_id.
   def create
     @user = User.new({
       name: params[:name],
@@ -14,7 +13,7 @@ class Api::UsersController < ApplicationController
       bio: params[:bio],
       art_style: params[:art_style],
       image_url: params[:image_url],
-      college_id: params[:college_id],
+      college_id: params[:college_id], # I dont want people to have to enter a number, and I know most of this will be done on frontend, but is this how it should look on my backend?
       major: params[:major],
       minor: params[:minor],
       graduation_year: params[:graduation_year]
@@ -52,9 +51,8 @@ class Api::UsersController < ApplicationController
   end
 
   def destroy
-    @user = User.find(params[:id])
-    @user.destroy
-    render json: {message: "The user has successfully been destroyed"}
+    current_user.destroy
+    render json: { message: "The user has successfully been destroyed" }
   end
 
 end
