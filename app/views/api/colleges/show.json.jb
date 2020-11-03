@@ -1,7 +1,7 @@
 college = render partial: "college.json.jb", locals: {college: @college}
 
-college[:users] = college.users.map do |user|
-  render partial: "api/users/user.json.jb", locals {user: user}
+college[:users] = @college.users.map do |user|
+  render partial: "api/users/user.json.jb", locals: {user: user}
 end
 
 college
