@@ -6,6 +6,31 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+# USERS
+
+User.create(name: "Henry Williams", email: "henry@gmail.com", password: "password", artist: false, bio: "I really enjoy looking at art", art_style: "", image_url: "https://www.carmelstudiosphotography.com/wp-content/gallery/professional-headshots/Professional-Headshot-6.jpg", college_id: nil, major: "", minor: "", graduation_year: nil)
+
+User.create(name: "Rebecca Jones", email: "rebecca@gmail.com", password: "password", artist: false, bio: "Art is my passion but im no good at it", art_style: "", image_url: "https://images.squarespace-cdn.com/content/v1/5e1384692ac811206347c8a3/1583701391812-E2642TW7HLQRTT9UC3EC/ke17ZwdGBToddI8pDm48kPJXHKy2-mnvrsdpGQjlhod7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QHyNOqBUUEtDDsRWrJLTmihaE5rlzFBImxTetd_yW5btdZx37rH5fuWDtePBPDaHF5LxdCVHkNEqSYPsUQCdT/professional+headshot+photographer+DC-1.JPG", college_id: nil, major: "", minor: "", graduation_year: nil)
+
+User.create(name: "Sarah Lewis", email: "sarah@texas.edu", password: "password", artist: true, bio: "I am a photographer from Germany and studying in the US", art_style: "B/W Photography", image_url: "https://images.squarespace-cdn.com/content/v1/56e05d74746fb93dcd805e8b/1553109528895-RYRDJLVNN61UDN65S59U/ke17ZwdGBToddI8pDm48kDmiacAi515_OfcChA6MRIQUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8PaoYXhp6HxIwZIk7-Mi3Tsic-L2IOPH3Dwrhl-Ne3Z23Oc3-AlX22j3PUzoYuTVI2MKzQWw7jmw4KYJnTQU-9E_twk1mUNduAk0T15_nZ7z/Tulsa-Headshot-Photographer_9639a.jpg?format=1500w", college_id: 5, major: "Fine Arts", minor: "Music Production", graduation_year: 2022)
+
+User.create(name: "John Stevenson", email: "john@gmail.com", password: "password", artist: false, bio: "Nerd, coder, art lover", art_style: "", image_url: "https://images.squarespace-cdn.com/content/v1/530a77dee4b035db71736c02/1570812709805-UW9CYAKYVXKSTO845HHI/ke17ZwdGBToddI8pDm48kMFiMyT1nneRMhnmfuSfpxZ7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0mlM0or4nqX7jrn5yWu0hA1QXedaIFqnAbw_tQShHbKg4-O_KAc44ak5jGzrnn7f3A/Connecticut+headshots+-+lawyer+headshot+-+Seshu+Badrinath.jpg", college_id: nil, major: "Music Industry", minor: "", graduation_year: 2004)
+
+User.create(name: "George Atkins", email: "george@usc.edu", password: "password", artist: true, bio: "I paint surreal and abstract images", art_style: "Surrealist Painting", image_url: "https://images.squarespace-cdn.com/content/v1/5528a968e4b02ed06b8e918e/1488345362890-A3XBBU82NG2UN2FC0HJS/ke17ZwdGBToddI8pDm48kJUlZr2Ql5GtSKWrQpjur5t7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UfNdxJhjhuaNor070w_QAc94zjGLGXCa1tSmDVMXf8RUVhMJRmnnhuU1v2M8fLFyJw/17-male-actor-headshots-denver.jpg", college_id: 1, major: "Art History", minor: "Fine Arts", graduation_year: 2024)
+
+User.create(name: "Alexandra Courier", email: "alexandra@gmail.com", password: "password", artist: false, bio: "Just happy to be here", art_style: "", image_url: "https://www.smartheadshots.com/blog/photos/actor-headshots-1283.jpg", college_id: nil, major: "History", minor: "", graduation_year: 2012)
+
+User.create(name: "Emily Adams", email: "emily@umich.edu", password: "password", artist: true, bio: "I make marble sculptures", art_style: "Marble Sculpture", image_url: "https://lh3.googleusercontent.com/proxy/qHOOMMn0vjW1VbgSixkpC68du3YqxCWRIm9ABB2UiaHcjeedZ8gUwxU8uJrZDxMq024cL4znLrS5Me3oqAd9yyEPhsNt8C4vN4ruUKksjMsmURliO6elDO3jvq2UDagoYjc", college_id: 3, major: "Communications", minor: "Economics", graduation_year: 2020)
+
+User.create(name: "Stanley Krupp", email: "stanley@usc.edu", password: "password", artist: true, bio: "Food can be art too", art_style: "Food Photographer", image_url: "https://i.pinimg.com/originals/a1/1e/2a/a11e2a9d5803e4dc2c034819ce12a16e.jpg", college_id: 1, major: "Fine Arts", minor: "History", graduation_year: 2021)
+
+User.create(name: "Jordan Ash", email: "jordan@ucla.edu", password: "password", artist: true, bio: "Big time sketchbook guy", art_style: "Charcoal Sketches", image_url: "https://images.squarespace-cdn.com/content/v1/5528a968e4b02ed06b8e918e/1526594034015-NUUARNIF9KF51XX5DLZT/ke17ZwdGBToddI8pDm48kI-Gmwgdo3NaDe0ghsWKuJ57gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UUp22eeT4BK2OG3zGMZrGkyeh9oYavb9wgB_ApHR6ERUhAgNtVhIb0iIxDMwkPeLEw/Koskinen_Gabe-9536.jpg", college_id: 2, major: "Business", minor: "Fine Arts", graduation_year: 2022)
+
+User.create(name: "Michael Woodward", email: "michael@nyu.edu", password: "password", artist: true, bio: "Documenting city life one day at a time", art_style: "Lithography", image_url: "https://d31u1j2vbx6ya5.cloudfront.net/gei-assets/uploads/2019/08/pro-headshots-photography-tips.jpg", college_id: 4, major: "Fine Arts", minor: "Sustainability", graduation_year: 2023)
+
+
+# COLLEGES
+
 College.create(name: "University of Southern California", abbreviation: "USC", city: "Los Angeles", state: "CA", bio: "The University of Southern California is one of the world’s leading private research universities. An anchor institution in Los Angeles, a global center for arts, technology and international business, USC’s diverse curricular offerings provide extensive opportunities for interdisciplinary study and collaboration with leading researchers in highly advanced learning environments.", image_url: "https://news.usc.edu/files/2016/02/USC-Village_7_web.jpg")
 
 College.create(name: "University of California, Los Angeles", abbreviation: "UCLA", city: "Los Angeles", state: "CA", bio: "The University of California, Los Angeles is a public research university in Los Angeles, California. UCLA traces its early origins back to 1882 as the southern branch of the California State Normal School.", image_url: "https://media3.s-nbcnews.com/i/newscms/2020_24/3385316/200609-ucla-campus-ew-647p_572a2ba5d627eba2b8abe8c0846ae58a.jpg")
@@ -17,28 +42,10 @@ College.create(name: "New York University", abbreviation: "NYU", city: "New York
 College.create(name: "University of Texas at Austin", abbreviation: "UT Austin", city: "Austin", state: "TX", bio: "The University of Texas at Austin, often referred to as UT Austin, UT, or Texas, is a public research university in Austin, Texas and the flagship institution of the University of Texas System.", image_url: "https://news.utexas.edu/wp-content/uploads/2020/01/iStock-155441000.jpg")
 
 
-User.create(name: "Henry Williams", email: "henry@gmail.com", artist: false, bio: "I really enjoy looking at art", art_style: "", image_url: "https://www.carmelstudiosphotography.com/wp-content/gallery/professional-headshots/Professional-Headshot-6.jpg", college_id: nil, major: "", minor: "", graduation_year: nil)
-
-User.create(name: "Rebecca Jones", email: "rebecca@gmail.com", artist: false, bio: "Art is my passion but im no good at it", art_style: "", image_url: "https://images.squarespace-cdn.com/content/v1/5e1384692ac811206347c8a3/1583701391812-E2642TW7HLQRTT9UC3EC/ke17ZwdGBToddI8pDm48kPJXHKy2-mnvrsdpGQjlhod7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QHyNOqBUUEtDDsRWrJLTmihaE5rlzFBImxTetd_yW5btdZx37rH5fuWDtePBPDaHF5LxdCVHkNEqSYPsUQCdT/professional+headshot+photographer+DC-1.JPG", college_id: nil, major: "", minor: "", graduation_year: nil)
-
-User.create(name: "Sarah Lewis", email: "sarah@texas.edu", artist: true, bio: "I am a photographer from Germany and studying in the US", art_style: "B/W Photography", image_url: "https://images.squarespace-cdn.com/content/v1/56e05d74746fb93dcd805e8b/1553109528895-RYRDJLVNN61UDN65S59U/ke17ZwdGBToddI8pDm48kDmiacAi515_OfcChA6MRIQUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8PaoYXhp6HxIwZIk7-Mi3Tsic-L2IOPH3Dwrhl-Ne3Z23Oc3-AlX22j3PUzoYuTVI2MKzQWw7jmw4KYJnTQU-9E_twk1mUNduAk0T15_nZ7z/Tulsa-Headshot-Photographer_9639a.jpg?format=1500w", college_id: 5, major: "Fine Arts", minor: "Music Production", graduation_year: 2022)
-
-User.create(name: "John Stevenson", email: "john@gmail.com", artist: false, bio: "Nerd, coder, art lover", art_style: "", image_url: "https://images.squarespace-cdn.com/content/v1/530a77dee4b035db71736c02/1570812709805-UW9CYAKYVXKSTO845HHI/ke17ZwdGBToddI8pDm48kMFiMyT1nneRMhnmfuSfpxZ7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0mlM0or4nqX7jrn5yWu0hA1QXedaIFqnAbw_tQShHbKg4-O_KAc44ak5jGzrnn7f3A/Connecticut+headshots+-+lawyer+headshot+-+Seshu+Badrinath.jpg", college_id: nil, major: "Music Industry", minor: "", graduation_year: 2004)
-
-User.create(name: "George Atkins", email: "george@usc.edu", artist: true, bio: "I paint surreal and abstract images", art_style: "Surrealist Painting", image_url: "https://images.squarespace-cdn.com/content/v1/5528a968e4b02ed06b8e918e/1488345362890-A3XBBU82NG2UN2FC0HJS/ke17ZwdGBToddI8pDm48kJUlZr2Ql5GtSKWrQpjur5t7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UfNdxJhjhuaNor070w_QAc94zjGLGXCa1tSmDVMXf8RUVhMJRmnnhuU1v2M8fLFyJw/17-male-actor-headshots-denver.jpg", college_id: 1, major: "Art History", minor: "Fine Arts", graduation_year: 2024)
-
-User.create(name: "Alexandra Courier", email: "alexandra@gmail.com", artist: false, bio: "Just happy to be here", art_style: "", image_url: "https://www.smartheadshots.com/blog/photos/actor-headshots-1283.jpg", college_id: nil, major: "History", minor: "", graduation_year: 2012)
-
-User.create(name: "Emily Adams", email: "emily@umich.edu", artist: true, bio: "I make marble sculptures", art_style: "Marble Sculpture", image_url: "https://lh3.googleusercontent.com/proxy/qHOOMMn0vjW1VbgSixkpC68du3YqxCWRIm9ABB2UiaHcjeedZ8gUwxU8uJrZDxMq024cL4znLrS5Me3oqAd9yyEPhsNt8C4vN4ruUKksjMsmURliO6elDO3jvq2UDagoYjc", college_id: 3, major: "Communications", minor: "Economics", graduation_year: 2020)
-
-User.create(name: "Stanley Krupp", email: "stanley@usc.edu", artist: true, bio: "Food can be art too", art_style: "Food Photographer", image_url: "https://i.pinimg.com/originals/a1/1e/2a/a11e2a9d5803e4dc2c034819ce12a16e.jpg", college_id: 1, major: "Fine Arts", minor: "History", graduation_year: 2021)
-
-User.create(name: "Jordan Ash", email: "jordan@ucla.edu", artist: true, bio: "Big time sketchbook guy", art_style: "Charcoal Sketches", image_url: "https://images.squarespace-cdn.com/content/v1/5528a968e4b02ed06b8e918e/1526594034015-NUUARNIF9KF51XX5DLZT/ke17ZwdGBToddI8pDm48kI-Gmwgdo3NaDe0ghsWKuJ57gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UUp22eeT4BK2OG3zGMZrGkyeh9oYavb9wgB_ApHR6ERUhAgNtVhIb0iIxDMwkPeLEw/Koskinen_Gabe-9536.jpg", college_id: 2, major: "Business", minor: "Fine Arts", graduation_year: 2022)
-
-User.create(name: "Michael Woodward", email: "michael@nyu.edu", artist: true, bio: "Documenting city life one day at a time", art_style: "Lithography", image_url: "https://d31u1j2vbx6ya5.cloudfront.net/gei-assets/uploads/2019/08/pro-headshots-photography-tips.jpg", college_id: 4, major: "Fine Arts", minor: "Sustainability", graduation_year: 2023)
+# ARTWORKS
 
 Artwork.create!([{
-  user_id: 10,
+  user_id: 8,
   title: "City Lights",
   medium: "Lithograph",
   description: "A reimiagining of NYC",
@@ -47,7 +54,7 @@ Artwork.create!([{
   year: 2018
 },
 {
-  user_id: 10,
+  user_id: 8,
   title: "After Hours",
   medium: "Lithograph",
   description: "A latenight lithograph",
@@ -92,7 +99,7 @@ Artwork.create!([{
   year: 2020
 },
 {
-  user_id: 9,
+  user_id: 7,
   title: "Doodles",
   medium: "Charcoal Sketch",
   description: "Just sum doodles uk",
@@ -101,7 +108,7 @@ Artwork.create!([{
   year: 2019
 },
 {
-  user_id: 7,
+  user_id: 5,
   title: "Greek Warrior",
   medium: "Marble Sculpture",
   description: "Warrior type in ideal proportions",
@@ -120,6 +127,8 @@ Artwork.create!([{
 },
 ])
 
+
+# IMAGES
 
 Image.create!([{
   artwork_id: 1,
@@ -175,6 +184,9 @@ Image.create!([{
 }
 ])
 
+
+# UPVOTES
+
 Upvote.create!([
 {
   artwork_id: 1,
@@ -198,15 +210,15 @@ Upvote.create!([
 },
 {
   artwork_id: 6,
-  user_id: 10
+  user_id: 4
 },
 {
   artwork_id: 7,
-  user_id: 10
+  user_id: 4
 },
 {
   artwork_id: 8,
-  user_id: 10
+  user_id: 4
 },
 {
   artwork_id: 9,
