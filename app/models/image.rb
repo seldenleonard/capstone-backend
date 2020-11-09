@@ -4,4 +4,7 @@ class Image < ApplicationRecord
 
   belongs_to :artwork
 
+  # New addition with the ones in college.rb and artwork.rb
+  # belongs_to :college, through: :artwork
+
 end

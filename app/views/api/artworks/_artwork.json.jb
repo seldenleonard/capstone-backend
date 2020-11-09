@@ -1,7 +1,6 @@
 {
   id: artwork.id,
   user_id: artwork.user_id,
-  artist: artwork.user.name, # Ask Dani if I should remove this line? (I'm thinking probably) because she did say that partials should not be bringing in onformation that is not a direct attribute of the model for which I made the partial
   title: artwork.title,
   medium: artwork.medium,
   description: artwork.description,

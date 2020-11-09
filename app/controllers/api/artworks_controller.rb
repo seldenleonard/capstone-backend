@@ -48,7 +48,9 @@ class Api::ArtworksController < ApplicationController
     @artwork = Artwork.find(params[:id])
     if current_user.id == @artwork.user_id
       @artwork.destroy
-      render json: {message: "The artwork has successfully been destroyed"}
+      render json: { message: "The artwork has successfully been destroyed" }
+    else
+      render json: { message: "You must be the owner of this artwork to modify it" }
     end
   end
 
