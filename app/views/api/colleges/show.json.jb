@@ -5,7 +5,3 @@ college[:users] = @college.users.map do |user|
 end
 
 college
-
-
-# New addition to try to get images of artworks in CollegesShow.vue
-college[:artwork_images] = @college.users.artworks.images do |image|

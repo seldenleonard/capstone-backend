@@ -18,6 +18,10 @@ class Api::ArtworksController < ApplicationController
       year: params[:year],
     })
     if @artwork.save
+      @image = Image.create(
+        url: params[:image_url],
+        artwork_id: @artwork.id
+      )
       render "show.json.jb"
     else
       render json: { errors: @artwork.errors.full_messages }, status: 422

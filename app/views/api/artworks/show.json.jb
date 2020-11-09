@@ -9,5 +9,8 @@ artwork[:images] = @artwork.images.map do |image|
   render partial: "api/images/image.json.jb", locals: { image: image }
 end
 
+# Shows 
+artwork[:college] = render partial: "api/colleges/college.json.jb", locals: {college: @artwork.user.college}
+
 artwork
 
