@@ -1,3 +1,8 @@
 @artworks.map do |artwork|
-  render partial: "artwork.json.jb", locals: { artwork: artwork }
+  artwork_hash = render partial: "artwork.json.jb", locals: { artwork: artwork }
+  artwork_hash[:images] = artwork.images.map do |image|
+    render partial: "api/images/image.json.jb", locals: { image: image }
+  end
+  artwork_hash
 end
+
