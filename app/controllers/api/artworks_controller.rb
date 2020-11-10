@@ -35,22 +35,26 @@ class Api::ArtworksController < ApplicationController
 
   def update
     @artwork = Artwork.find(params[:id])
-    @artwork.title = params[:title] || @artwork.title
-    @artwork.medium = params[:medium] || @artwork.medium
-    @artwork.description = params[:description] || @artwork.description
-    @artwork.price = params[:price] || @artwork.price
-    @artwork.dimensions = params[:dimensions] || @artwork.dimensions
-    @artwork.year = params[:year] || @artwork.year
-    if @artwork.save
-      render "show.json.jb"
+    if @artwork.user == current_user
+      @artwork.title = params[:title] || @artwork.title
+      @artwork.medium = params[:medium] || @artwork.medium
+      @artwork.description = params[:description] || @artwork.description
+      @artwork.price = params[:price] || @artwork.price
+      @artwork.dimensions = params[:dimensions] || @artwork.dimensions
+      @artwork.year = params[:year] || @artwork.year
+      if @artwork.save
+        render "show.json.jb"
+      else
+        render json: { errors: @artwork.errors.full_messages }, status: 422
+      end
     else
-      render json: { errors: @artwork.errors.full_messages }, status: 422
+      render json: { errors: @artwork.errors.full_messages }, status: 401
     end
   end  
 
   def destroy
     @artwork = Artwork.find(params[:id])
-    if current_user.id == @artwork.user_id
+    if @artwork.user == current_user
       @artwork.destroy
       render json: { message: "The artwork has successfully been destroyed" }
     else

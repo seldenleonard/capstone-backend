@@ -31,7 +31,7 @@ class Api::UsersController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:id])
+    @user = current_user
     @user.name = params[:name] || @user.name
     @user.email = params[:email] || @user.email
     # Depending on how I handle password and password_confirmation vs password digest in my "create" method, will dictate what I put in here.
