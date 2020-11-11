@@ -48,7 +48,7 @@ Artwork.create!([{
   user_id: 8,
   title: "City Lights",
   medium: "Lithograph",
-  description: "A reimiagining of NYC",
+  description: "A reimagining of NYC",
   price: 20,
   dimensions: "5 x 10 x 12",
   year: 2018
