@@ -15,7 +15,7 @@ class Api::UpvotesController < ApplicationController
   end
 
   def destroy
-    @upvote = Upvote.find(params[:id]) # -- Should this be more like "if current_user has upvoted this artwork, @upvote = the combination of current_user.id and artwork_id" My only worry is that the URL will exist to delete an upvote and although there wont be a clickable link, the URL will still not require authorization so presumably anyone could delete anyone else's upvote(s).
+    @upvote = Upvote.find_by(artwork_id: params[:artwork_id], user_id: current_user.id)
     @upvote.destroy
     render json: { message: "You have unliked this artwork" }
   end

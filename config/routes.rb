@@ -31,7 +31,7 @@ Rails.application.routes.draw do
 
     # Upvote Routes
     post "/upvotes" => "upvotes#create"
-    delete "/upvotes/:id" => "upvotes#destroy"
+    delete "/upvotes/:artwork_id" => "upvotes#destroy"
 
   end
 
