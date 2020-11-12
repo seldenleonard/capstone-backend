@@ -10,12 +10,12 @@ class User < ApplicationRecord
   validates :artist, inclusion: { in: [true, false] } # this is not stopping random words from being entered into the artist params in User create
   # validates :artist, exclusion: { in: [nil] }
   # validates :artist, default: false
-  validates :bio, length: { maximum: 600 }
-  validates :art_style, length: { maximum: 50 }
-  validates :major, length: { maximum: 30 }
-  validates :minor, length: { maximum: 30 }
+  validates :bio, length: { maximum: 600 }, if: :is_artist?
+  validates :art_style, length: { maximum: 50 }, if: :is_artist?
+  validates :major, length: { maximum: 30 }, if: :is_artist?
+  validates :minor, length: { maximum: 30 }, if: :is_artist?
   # validates :graduation_year, presence: true ------ need to make this for artists only -- can do this on frontend
-  validates :graduation_year, length: { is: 4 }
+  validates :graduation_year, length: { is: 4 }, if: :is_artist?
   validates :college_id, presence: true, if: :is_artist?
   
   def is_artist?
