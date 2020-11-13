@@ -7,7 +7,8 @@
   price: artwork.price,
   dimensions: artwork.dimensions,
   year: artwork.year,
-  upvotes: artwork.upvotes.count,
+  upvotes: artwork.upvotes,
+  upvotes_count: artwork.upvotes.count,
   created_at: artwork.created_at,
   updated_at: artwork.updated_at
 }
