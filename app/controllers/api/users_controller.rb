@@ -4,6 +4,11 @@ class Api::UsersController < ApplicationController
 
   # ISSUE 2: I dont want a new user to input their college_id, but rather have them enter a college and I store the college_id.
   def create
+    cloudinary_url = nil
+    if params[:image]
+      response = Cloudinary::Uploader.upload(params[:image], resource_type: :auto)
+      cloudinary_url = response["secure_url"]
+    end
     @user = User.new({
       name: params[:name],
       email: params[:email],
@@ -12,7 +17,7 @@ class Api::UsersController < ApplicationController
       artist: params[:artist],
       bio: params[:bio],
       art_style: params[:art_style],
-      image_url: params[:image_url],
+      image_url: cloudinary_url,
       college_id: params[:college_id], # I dont want people to have to enter a number, and I know most of this will be done on frontend, but is this how it should look on my backend?
       major: params[:major],
       minor: params[:minor],
