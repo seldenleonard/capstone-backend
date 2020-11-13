@@ -13,6 +13,7 @@ class User < ApplicationRecord
   # validates :artist, default: false
   validates :bio, length: { maximum: 600 }, if: :is_artist?
   validates :art_style, length: { maximum: 50 }, if: :is_artist?
+  validates :major, presence: true, if: :is_artist?
   validates :major, length: { maximum: 30 }, if: :is_artist?
   validates :minor, length: { maximum: 30 }, if: :is_artist?
   # validates :graduation_year, presence: true ------ need to make this for artists only -- can do this on frontend
