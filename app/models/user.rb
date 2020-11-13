@@ -2,7 +2,8 @@ class User < ApplicationRecord
 
   has_secure_password
   validates :email, presence: true, uniqueness: true
-  validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }, if: :is_artist?
+  validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
+  validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :update }
   # -- trying to have email include .edu or maybe a list of @usc.edu, @nyu.edu, @utau.edu, and @umich.edu?
   validates :name, presence: true
   validates :name, length: { in: 2..30 }
