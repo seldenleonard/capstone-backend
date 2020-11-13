@@ -20,6 +20,12 @@ class User < ApplicationRecord
   validates :graduation_year, length: { is: 4 }, if: :is_artist?
   validates :college_id, presence: true, if: :is_artist?
   
+  # WHY DOES THIS (commented-out) CODE BELOW NOT DO THE TASK OF ALLOWING A USER TO LEAVE THE "password" AND "password_confirmation" boxes blank in UserEdit.vue?
+  # validates :password, presence: true, length: { in: 4..20 }, if: :password_changed?
+  # def password_changed?
+  #   !password.blank?
+  # end
+
   def is_artist?
     artist
   end

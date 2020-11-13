@@ -37,13 +37,20 @@ class Api::UsersController < ApplicationController
 
   def update
     @user = current_user
+    cloudinary_url = nil
+    if params[:image]
+      response = Cloudinary::Uploader.upload(params[:image], resource_type: :auto)
+      cloudinary_url = response["secure_url"]
+    end
     @user.name = params[:name] || @user.name
     @user.email = params[:email] || @user.email
+    @user.password = params[:password] || @user.password
+    @user.password_confirmation = params[:password_confirmation] || @user.password_confirmation
     # Depending on how I handle password and password_confirmation vs password digest in my "create" method, will dictate what I put in here. Ask if I need both "password" and "password_confirmation", because on the frontend I ask for both, or if I can get away with just sending "password" and not "password_confirmation from the backend if I am asking for both on the frontend?"
     @user.artist = params[:artist] || @user.artist
     @user.bio = params[:bio] || @user.bio
     @user.art_style = params[:art_style] || @user.art_style
-    @user.image_url = params[:image_url] || @user.image_url
+    @user.image_url = cloudinary_url || @user.image_url
     @user.college_id = params[:college_id] || @user.college_id
     @user.major = params[:major] || @user.major
     @user.minor = params[:minor] || @user.minor
