@@ -50,6 +50,7 @@ class Api::ArtworksController < ApplicationController
     else
       render json: { errors: @artwork.errors.full_messages }, status: 401
     end
+    # GENERALLY, BUT ESPECIALLY IN TERMS OF USING CLOUDINARY, SHOULDN'T THE UPDATE ACTION ALSO BE CREATING IMAGES? LOOK TO USERS CONTROLLER FOR REFERENCE OF HOW TO DO IT
   end  
 
   def destroy

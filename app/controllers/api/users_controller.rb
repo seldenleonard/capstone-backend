@@ -2,7 +2,6 @@ class Api::UsersController < ApplicationController
 
   before_action :authenticate_user, except: [:create, :show]
 
-  # ISSUE 2: I dont want a new user to input their college_id, but rather have them enter a college and I store the college_id.
   def create
     cloudinary_url = nil
     if params[:image]
@@ -18,7 +17,7 @@ class Api::UsersController < ApplicationController
       bio: params[:bio],
       art_style: params[:art_style],
       image_url: cloudinary_url,
-      college_id: params[:college_id], # I dont want people to have to enter a number, and I know most of this will be done on frontend, but is this how it should look on my backend?
+      college_id: params[:college_id],
       major: params[:major],
       minor: params[:minor],
       graduation_year: params[:graduation_year]
@@ -56,7 +55,6 @@ class Api::UsersController < ApplicationController
       @user.password = params[:password] || @user.password
       @user.password_confirmation = params[:password_confirmation] || @user.password_confirmation
     end
-    # Depending on how I handle password and password_confirmation vs password digest in my "create" method, will dictate what I put in here. Ask if I need both "password" and "password_confirmation", because on the frontend I ask for both, or if I can get away with just sending "password" and not "password_confirmation from the backend if I am asking for both on the frontend?"
     if @user.save
       render "show.json.jb"
     else
