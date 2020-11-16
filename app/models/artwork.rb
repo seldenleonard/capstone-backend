@@ -10,8 +10,8 @@ class Artwork < ApplicationRecord
   validates :year, length: { is: 4 }
 
   belongs_to :user
-  has_many :images
-  has_many :upvotes
+  has_many :images, dependent: :destroy
+  has_many :upvotes, dependent: :destroy
   has_many :users, through: :upvotes
 
   # New addition with the ones in college.rb

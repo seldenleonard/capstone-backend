@@ -3,14 +3,16 @@ class Api::ImagesController < ApplicationController
   before_action :authenticate_artist
 
   def create
-    image = Image.new({
+    response = Cloudinary::Uploader.upload(params[:image], resource_type: :auto)
+    cloudinary_url = response["secure_url"]
+    @image = Image.new({
       artwork_id: params[:artwork_id],
-      url: params[:url]
+      url: cloudinary_url
     })
-    if image.save
-      render json: { message: "Image uploaded successfully" }, status: 200 # OR I COULD RENDER THE ARTWORKS SHOW VIEW POTENTIALLY?
+    if @image.save
+      render "show.json.jb"
     else
-      render json: { errors: image.errors.full_messages }, status: 422
+      render json: { errors: @image.errors.full_messages }, status: 422
     end
   end
 
