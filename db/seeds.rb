@@ -1,20 +1,3 @@
-Image.create!([
-  {artwork_id: 1, url: ""},
-  {artwork_id: 1, url: ""},
-  {artwork_id: 1, url: ""},
-  {artwork_id: 2, url: ""},
-  {artwork_id: 3, url: ""},
-  {artwork_id: 4, url: ""},
-  {artwork_id: 5, url: "https://ewscripps.brightspotcdn.com/dims4/default/669c126/2147483647/strip/true/crop/640x360+0+60/resize/1280x720!/quality/90/?url=https%3A%2F%2Fsharing.nbc26.com%2Fsharescnn%2Fphoto%2F2016%2F11%2F04%2F80_Big-Mac_1478269063792_49157337_ver1.0_640_480.jpg"},
-  {artwork_id: 5, url: "https://mcdonalds.co.nz/sites/mcdonalds.co.nz/files/BigMac_BB_Low_XXXX_2019_SMP%20700x487.png"},
-  {artwork_id: 6, url: "https://upload.wikimedia.org/wikipedia/commons/a/a0/%27David%27_by_Michelangelo_Fir_JBU002.jpg"},
-  {artwork_id: 6, url: "https://mymodernmet.com/wp/wp-content/uploads/2017/06/david-sculpture-4.jpg"},
-  {artwork_id: 7, url: ""},
-  {artwork_id: 8, url: ""},
-  {artwork_id: 9, url: ""},
-  {artwork_id: 19, url: "https://i.etsystatic.com/15020412/r/il/455abc/2328156575/il_1588xN.2328156575_4m7l.jpg"},
-  {artwork_id: 20, url: "https://i.etsystatic.com/11942812/r/il/1814cc/1781511326/il_1588xN.1781511326_3n0e.jpg"}
-])
 College.create!([
   {name: "University of Southern California", abbreviation: "USC", city: "Los Angeles", state: "CA", bio: "The University of Southern California is one of the world’s leading private research universities. An anchor institution in Los Angeles, a global center for arts, technology and international business, USC’s diverse curricular offerings provide extensive opportunities for interdisciplinary study and collaboration with leading researchers in highly advanced learning environments.", image_url: "https://news.usc.edu/files/2016/02/USC-Village_7_web.jpg"},
   {name: "University of California, Los Angeles", abbreviation: "UCLA", city: "Los Angeles", state: "CA", bio: "The University of California, Los Angeles is a public research university in Los Angeles, California. UCLA traces its early origins back to 1882 as the southern branch of the California State Normal School.", image_url: "https://media3.s-nbcnews.com/i/newscms/2020_24/3385316/200609-ucla-campus-ew-647p_572a2ba5d627eba2b8abe8c0846ae58a.jpg"},
@@ -26,30 +9,8 @@ College.create!([
   {name: "University of Michigan", abbreviation: "UMich", city: "Ann Arbor", state: "MI", bio: "The University of Michigan, often simply referred to as Michigan, is a public research university in Ann Arbor, Michigan. Founded in 1817 in Detroit, as the Catholepistemiad, or the University of Michigania, 20 years before the territory became a state, the university is Michigan's oldest.", image_url: "https://news.umich.edu/wp-content/uploads/2019/10/u-m-launches-firearm-injury-prevention-research-initiative.jpg"},
   {name: "New York University", abbreviation: "NYU", city: "New York", state: "NY", bio: "New York University is a private research university based in New York City. Founded in 1831 by Albert Gallatin as an institution to 'admit based upon merit rather than birthright or social class', NYU's historical campus is in Greenwich Village.", image_url: "https://static01.nyt.com/images/2017/11/10/nyregion/10nyu/10nyu-superJumbo.jpg"},
   {name: "University of Texas at Austin", abbreviation: "UT Austin", city: "Austin", state: "TX", bio: "The University of Texas at Austin, often referred to as UT Austin, UT, or Texas, is a public research university in Austin, Texas and the flagship institution of the University of Texas System.", image_url: "https://news.utexas.edu/wp-content/uploads/2020/01/iStock-155441000.jpg"}
-])
-Upvote.create!([
-  {artwork_id: 2, user_id: 8},
-  {artwork_id: 3, user_id: 8},
-  {artwork_id: 4, user_id: 7},
-  {artwork_id: 5, user_id: 7},
-  {artwork_id: 6, user_id: 4},
-  {artwork_id: 7, user_id: 4},
-  {artwork_id: 8, user_id: 4},
-  {artwork_id: 9, user_id: 1},
-  {artwork_id: 1, user_id: 1},
-  {artwork_id: 2, user_id: 4},
-  {artwork_id: 3, user_id: 4},
-  {artwork_id: 4, user_id: 5},
-  {artwork_id: 5, user_id: 5},
-  {artwork_id: 6, user_id: 5},
-  {artwork_id: 7, user_id: 5},
-  {artwork_id: 8, user_id: 5},
-  {artwork_id: 9, user_id: 3},
-  {artwork_id: 19, user_id: 11},
-  {artwork_id: 20, user_id: 11},
-  {artwork_id: 2, user_id: 10}
-])
-User.create!([
+  ])
+  User.create!([
   {name: "Henry Williams", email: "henry@gmail.com", password_digest: "$2a$12$jbbFCsCIl.LpzEJPnrXm7OLIuZ1vh9MGYeh2q1vFmJWVYc.hthXJC", artist: false, bio: "I really enjoy looking at art", art_style: "", image_url: "https://www.carmelstudiosphotography.com/wp-content/gallery/professional-headshots/Professional-Headshot-6.jpg", college_id: nil, major: "", minor: "", graduation_year: nil},
   {name: "Rebecca Jones", email: "rebecca@gmail.com", password_digest: "$2a$12$4nKaMRdEqFmikPjk9zQapOmmbzh4vxsy2tUavhwyM7e6deXEyZWRu", artist: false, bio: "Art is my passion but im no good at it", art_style: "", image_url: "https://images.squarespace-cdn.com/content/v1/5e1384692ac811206347c8a3/1583701391812-E2642TW7HLQRTT9UC3EC/ke17ZwdGBToddI8pDm48kPJXHKy2-mnvrsdpGQjlhod7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QHyNOqBUUEtDDsRWrJLTmihaE5rlzFBImxTetd_yW5btdZx37rH5fuWDtePBPDaHF5LxdCVHkNEqSYPsUQCdT/professional+headshot+photographer+DC-1.JPG", college_id: nil, major: "", minor: "", graduation_year: nil},
   {name: "Sarah Lewis", email: "sarah@texas.edu", password_digest: "$2a$12$vjMINCmRSBY.seoxxI.yRuhHu3KP9tQyrNgahPpV9489BXd6QFfq6", artist: true, bio: "I am a photographer from Germany and studying in the US", art_style: "B/W Photography", image_url: "https://images.squarespace-cdn.com/content/v1/56e05d74746fb93dcd805e8b/1553109528895-RYRDJLVNN61UDN65S59U/ke17ZwdGBToddI8pDm48kDmiacAi515_OfcChA6MRIQUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8PaoYXhp6HxIwZIk7-Mi3Tsic-L2IOPH3Dwrhl-Ne3Z23Oc3-AlX22j3PUzoYuTVI2MKzQWw7jmw4KYJnTQU-9E_twk1mUNduAk0T15_nZ7z/Tulsa-Headshot-Photographer_9639a.jpg?format=1500w", college_id: 5, major: "Fine Arts", minor: "Music Production", graduation_year: 2022},
@@ -83,4 +44,43 @@ Artwork.create!([
   {user_id: 3, title: "Venus", medium: "B/W Photography", description: "Nude portrait of my friend", price: nil, dimensions: "9 x 10 x 14", year: 2020},
   {user_id: 11, title: "Nick Cage Duck", medium: "Drawing", description: "self-explanatory", price: 900, dimensions: "14\" x 14\" x 16\"", year: 2020},
   {user_id: 11, title: "Cage Bib", medium: "Leather", description: "Nicky Cage Bib For Babies", price: 100000, dimensions: "20\" x 30\" x 25\"", year: 2020}
+])
+Image.create!([
+  {artwork_id: 1, url: ""},
+  {artwork_id: 1, url: ""},
+  {artwork_id: 1, url: ""},
+  {artwork_id: 2, url: ""},
+  {artwork_id: 3, url: ""},
+  {artwork_id: 4, url: ""},
+  {artwork_id: 5, url: "https://ewscripps.brightspotcdn.com/dims4/default/669c126/2147483647/strip/true/crop/640x360+0+60/resize/1280x720!/quality/90/?url=https%3A%2F%2Fsharing.nbc26.com%2Fsharescnn%2Fphoto%2F2016%2F11%2F04%2F80_Big-Mac_1478269063792_49157337_ver1.0_640_480.jpg"},
+  {artwork_id: 5, url: "https://mcdonalds.co.nz/sites/mcdonalds.co.nz/files/BigMac_BB_Low_XXXX_2019_SMP%20700x487.png"},
+  {artwork_id: 6, url: "https://upload.wikimedia.org/wikipedia/commons/a/a0/%27David%27_by_Michelangelo_Fir_JBU002.jpg"},
+  {artwork_id: 6, url: "https://mymodernmet.com/wp/wp-content/uploads/2017/06/david-sculpture-4.jpg"},
+  {artwork_id: 7, url: ""},
+  {artwork_id: 8, url: ""},
+  {artwork_id: 9, url: ""},
+  {artwork_id: 19, url: "https://i.etsystatic.com/15020412/r/il/455abc/2328156575/il_1588xN.2328156575_4m7l.jpg"},
+  {artwork_id: 20, url: "https://i.etsystatic.com/11942812/r/il/1814cc/1781511326/il_1588xN.1781511326_3n0e.jpg"}
+])
+Upvote.create!([
+  {artwork_id: 2, user_id: 8},
+  {artwork_id: 3, user_id: 8},
+  {artwork_id: 4, user_id: 7},
+  {artwork_id: 5, user_id: 7},
+  {artwork_id: 6, user_id: 4},
+  {artwork_id: 7, user_id: 4},
+  {artwork_id: 8, user_id: 4},
+  {artwork_id: 9, user_id: 1},
+  {artwork_id: 1, user_id: 1},
+  {artwork_id: 2, user_id: 4},
+  {artwork_id: 3, user_id: 4},
+  {artwork_id: 4, user_id: 5},
+  {artwork_id: 5, user_id: 5},
+  {artwork_id: 6, user_id: 5},
+  {artwork_id: 7, user_id: 5},
+  {artwork_id: 8, user_id: 5},
+  {artwork_id: 9, user_id: 3},
+  {artwork_id: 19, user_id: 11},
+  {artwork_id: 20, user_id: 11},
+  {artwork_id: 2, user_id: 10}
 ])

@@ -5,7 +5,7 @@ class Artwork < ApplicationRecord
   validates :medium, presence: true
   validates :medium, length: { in: 3..50 }
   validates :description, length: { maximum: 500 }
-  validates :price, length: { maximum: 7 }
+  validates :price, length: { maximum: 9 }
   validates :year, presence: true
   validates :year, length: { is: 4 }
 

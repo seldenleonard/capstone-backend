@@ -1,6 +1,7 @@
 class User < ApplicationRecord
 
   has_secure_password
+  validates :password, presence: true, length: { in: 6..20 }
   validates :email, presence: true, uniqueness: true
   validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
   validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :update }
@@ -19,12 +20,6 @@ class User < ApplicationRecord
   # validates :graduation_year, presence: true ------ need to make this for artists only -- can do this on frontend
   validates :graduation_year, length: { is: 4 }, if: :is_artist?
   validates :college_id, presence: true, if: :is_artist?
-  
-  # WHY DOES THIS (commented-out) CODE BELOW NOT DO THE TASK OF ALLOWING A USER TO LEAVE THE "password" AND "password_confirmation" boxes blank in UserEdit.vue?
-  # validates :password, presence: true, length: { in: 4..20 }, if: :password_changed?
-  # def password_changed?
-  #   !password.blank?
-  # end
 
   def is_artist?
     artist
