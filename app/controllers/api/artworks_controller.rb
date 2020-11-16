@@ -18,8 +18,13 @@ class Api::ArtworksController < ApplicationController
       year: params[:year],
     })
     if @artwork.save
+      cloudinary_url = nil
+      if params[:image]
+        response = Cloudinary::Uploader.upload(params[:image], resource_type: :auto)
+        cloudinary_url = response["secure_url"]
+      end
       @image = Image.create(
-        url: params[:image_url],
+        url: cloudinary_url,
         artwork_id: @artwork.id
       )
       render "show.json.jb"
@@ -34,6 +39,11 @@ class Api::ArtworksController < ApplicationController
   end
 
   def update
+    cloudinary_url = nil
+    if params[:image]
+      response = Cloudinary::Uploader.upload(params[:image], resource_type: :auto)
+      cloudinary_url = response["secure_url"]
+    end
     @artwork = Artwork.find(params[:id])
     if @artwork.user == current_user
       @artwork.title = params[:title] || @artwork.title
@@ -43,6 +53,13 @@ class Api::ArtworksController < ApplicationController
       @artwork.dimensions = params[:dimensions] || @artwork.dimensions
       @artwork.year = params[:year] || @artwork.year
       if @artwork.save
+        # @artwork.images.each do |image|
+        #   image.url = cloudinary_url || image.url
+        # end
+        @image = Image.create(
+          url: cloudinary_url,
+          artwork_id: @artwork.id
+        )
         render "show.json.jb"
       else
         render json: { errors: @artwork.errors.full_messages }, status: 422
