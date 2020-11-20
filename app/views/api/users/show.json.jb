@@ -12,6 +12,7 @@ end
 
 if @user.artist
   user[:college_name] = @user.college.name
+  user[:college_abbreviation] = @user.college.abbreviation
 end
 
 user
