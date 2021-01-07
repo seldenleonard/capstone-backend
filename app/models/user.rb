@@ -7,7 +7,7 @@ class User < ApplicationRecord
   validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :update }
   # -- trying to have email include .edu or maybe a list of @usc.edu, @nyu.edu, @utau.edu, and @umich.edu?
   validates :name, presence: true
-  validates :name, length: { in: 2..30 }
+  validates :name, length: { in: 2..50 }
   # validates :artist, presence: true # -- Probably dont need because a checkbox will make it unneccesary on frontend
   validates :artist, inclusion: { in: [true, false] } # this is not stopping random words from being entered into the artist params in User create
   # validates :artist, exclusion: { in: [nil] }
