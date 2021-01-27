@@ -8,7 +8,6 @@ class Api::UpvotesController < ApplicationController
       user_id: current_user.id
     })
     if @upvote.save
-      render json: { message: "You have upvoted this artwork" } # do I need a show or is this alright? I guess I dont need a whole show action so I probably dont need a show view right? ---- Dani says get rid of when I build my frontend and it will just show the heart box filled in
     else
       render json: { errors: @upvote.errors.full_messages }, status: 422
     end
