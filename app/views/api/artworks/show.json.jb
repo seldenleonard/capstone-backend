@@ -1,18 +1,18 @@
-# Shows Artwork information
+# Shows Artwork Attributes
 artwork = render partial: "artwork.json.jb", locals: { artwork: @artwork }
 
-# Shows information for User who created Artwork
+# Shows Attributes of User who Created the Artwork
 artwork[:user] = render partial: "api/users/user.json.jb", locals: {user: @artwork.user}
 
-# Shows index of all Images for an Artwork
+# Shows Index of All Images that Belong to an Artwork
 artwork[:images] = @artwork.images.map do |image|
   render partial: "api/images/image.json.jb", locals: { image: image }
 end
 
-# Shows the College associated with an Artwork
+# Shows Attributes of College Associated with an Artwork (Through a User)
 artwork[:college] = render partial: "api/colleges/college.json.jb", locals: {college: @artwork.user.college}
 
-# Identifies whether or not the current user has upvoted the artwork displayed in this view
+# Identifies Whether the Current User has Upvoted the Artwork Displayed in this View
 if current_user && Upvote.find_by(artwork_id: @artwork.id, user_id: current_user.id)
   artwork[:upvote] = true
 end
