@@ -1,7 +1,7 @@
-# Shows the User Information
+# Shows User Attributes
 user = render partial: "user.json.jb", locals: { user: @user }
 
-# Shows all Artworks by the User and in the nested, shows all images of those artworks
+# Shows Index of All Artworks Created by the User (and Nested .map Statement Shows Index of All Images Belonging to Each Artwork)
 user[:artworks] = @user.artworks.map do |artwork|
   artwork_hash = render partial: "api/artworks/artwork.json.jb", locals: { artwork: artwork }
   artwork_hash[:images] = artwork.images.map do |image|
