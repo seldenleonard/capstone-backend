@@ -7,7 +7,7 @@
   price: artwork.price,
   dimensions: artwork.dimensions,
   year: artwork.year,
-  upvotes_count: artwork.upvotes.count, # Note: this is not best-practice to have any non-artwork attributes in the artwork partial, because upvotes is a different model entirely, but belongs to an artwork through associations, I should really be rendering this in my views. 
+  upvotes_count: artwork.upvotes.count, # NOTE: It is not best-practice to have any non-artwork attributes in the artwork partial. Upvotes is a different model entirely, but belongs to an artwork through associations. Best practice would be to render artwork.upvotes.count in my views. 
   created_at: artwork.created_at,
   updated_at: artwork.updated_at
 }
