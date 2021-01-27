@@ -14,7 +14,4 @@ class Artwork < ApplicationRecord
   has_many :upvotes, dependent: :destroy
   has_many :users, through: :upvotes
 
-  # New addition with the ones in college.rb
-  # belongs_to :college, through: :user
-
 end
