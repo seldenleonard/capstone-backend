@@ -17,9 +17,7 @@ class Api::ArtworksController < ApplicationController
       dimensions: params[:dimensions],
       year: params[:year],
     })
-    if @artwork.save
-      # 5.times do
-  
+    if @artwork.save  
         if params[:image1]
           response = Cloudinary::Uploader.upload(params[:image1], resource_type: :auto)
           cloudinary_url = response["secure_url"]
@@ -46,16 +44,6 @@ class Api::ArtworksController < ApplicationController
             artwork_id: @artwork.id
           )
         end
-        
-        # THIS IS NOT VERY DRY BUT IT DOES ALLOW UP TO 3 IMAGES TO BE UPLOADED AT ONCE
-      # end
-      # end
-      # if @image.save # IF THIS WORKS I CAN ADD IN A 5.times do LOOP AND WILL NEED TO CHANGE image.create to image.new and add an image.save after the loop and statement so it will save the last image inputted
-      #   @image = Image.create(
-      #     url: cloudinary_url,
-      #     artwork_id: @artwork.id
-      #   )
-      # end
       render "show.json.jb"
     else
       render json: { errors: @artwork.errors.full_messages }, status: 422
