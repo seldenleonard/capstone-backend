@@ -80,6 +80,7 @@ test:
 #
 production:
   <<: *default
+  adapter: postgresql
   database: capstone_backend_production
   username:
   password: <%= ENV['CAPSTONE_BACKEND_DATABASE_PASSWORD'] %>
