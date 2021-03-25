@@ -11,8 +11,8 @@ class User < ApplicationRecord
   validates :bio, length: { maximum: 500 }, if: :is_artist?
   validates :art_style, length: { maximum: 50 }, if: :is_artist?
   validates :major, presence: true, if: :is_artist?
-  validates :major, length: { maximum: 30 }, if: :is_artist?
-  validates :minor, length: { maximum: 30 }, if: :is_artist?
+  validates :major, length: { maximum: 50 }, if: :is_artist?
+  validates :minor, length: { maximum: 50 }, if: :is_artist?
   validates :graduation_year, length: { is: 4 }, if: :is_artist?
   validates :college_id, presence: true, if: :is_artist?
 
