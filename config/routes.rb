@@ -30,6 +30,9 @@ Rails.application.routes.draw do
     post "/upvotes" => "upvotes#create"
     delete "/upvotes/:artwork_id" => "upvotes#destroy"
 
+    # Route For Accessing Vue.js App Via Heroku
+    get "/*path" => proc { [200, {}, [ActionView::Base.new.render(file: 'public/index.html')]] }
+
   end
 
 end
