@@ -804,7 +804,7 @@ Upvote.create!([
   {artwork_id: 32, user_id: 18},
   {artwork_id: 32, user_id: 19},
   {artwork_id: 32, user_id: 20},
-  {artwork_id: 32, user_id: 21},
+  # {artwork_id: 32, user_id: 21},
   # {artwork_id: 32, user_id: 22},
   # {artwork_id: 32, user_id: 23},
   # {artwork_id: 32, user_id: 24},
