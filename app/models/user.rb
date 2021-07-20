@@ -20,9 +20,9 @@ class User < ApplicationRecord
     artist
   end
 
+  belongs_to :college, optional: true
   has_many :artworks, dependent: :destroy
   has_many :upvotes, dependent: :destroy
-  belongs_to :college, optional: true
   has_many :upvoted_artworks, through: :upvotes, source: :artwork
 
 end
